@@ -172,11 +172,9 @@
     if (dataStr) {
       try {
         const decoded = JSON.parse(atob(dataStr));
-        
         document.getElementById('cardHolder').textContent = (decoded.nome || 'N/A').toUpperCase();
         document.getElementById('cardCF').textContent = (decoded.cf || 'N/A').toUpperCase();
         
-        // Garantisce che ci siano solo le 16 cifre della carta di credito (nessun IBAN o prefisso IT)
         let num = decoded.cardNumber || '4000 1234 5678 9010';
         num = num.replace(/IT/gi, '').trim();
         
