@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta di Credito IC - Roma Eterna RP</title>
+  <title>Carta Intesa Sanpaolo</title>
   <style>
     body {
       background: #0d0f12;
@@ -17,7 +17,13 @@
       margin: 0;
       perspective: 1000px;
     }
-    .hint { margin-bottom: 25px; color: #8a99ad; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .hint { 
+      margin-bottom: 25px; 
+      color: #8a99ad; 
+      font-size: 14px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+    }
     .card-container {
       width: 380px;
       height: 240px;
@@ -26,41 +32,82 @@
       transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer;
     }
-    .card-container.flipped { transform: rotateY(180deg); }
+    .card-container.flipped { 
+      transform: rotateY(180deg); 
+    }
     .card-face {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 16px;
       backface-visibility: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 15px rgba(212,175,55,0.2);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 15px rgba(0,95,75,0.3);
       border: 1px solid rgba(255,255,255,0.1);
       overflow: hidden;
     }
     /* Front Side */
     .card-front {
-      background: linear-gradient(135deg, #1e242e 0%, #0b0d11 100%);
+      background: linear-gradient(135deg, #005F4B 0%, #05241c 100%);
       padding: 22px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .card-header { display: flex; justify-content: space-between; align-items: center; }
-    .bank-name { font-weight: 800; letter-spacing: 1.5px; color: #d4af37; font-size: 16px; text-shadow: 0 0 5px rgba(212,175,55,0.5); }
-    .chip { width: 45px; height: 34px; background: linear-gradient(135deg, #e6c875, #997a2a); border-radius: 6px; position: relative; }
-    .card-number { font-size: 20px; letter-spacing: 3px; font-family: 'Courier New', Courier, monospace; color: #e0e0e0; margin-top: 15px; }
-    .card-details { display: flex; justify-content: space-between; align-items: flex-end; }
-    .label { font-size: 9px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
-    .val { font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #fff; }
+    .card-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .bank-name { 
+      font-weight: 800; 
+      letter-spacing: 1.5px; 
+      color: #ffffff; 
+      font-size: 15px; 
+    }
+    .chip { 
+      width: 45px; 
+      height: 34px; 
+      background: linear-gradient(135deg, #e6c875, #997a2a); 
+      border-radius: 6px; 
+    }
+    .card-number { 
+      font-size: 20px; 
+      letter-spacing: 3px; 
+      font-family: 'Courier New', Courier, monospace; 
+      color: #ffffff; 
+      margin-top: 15px; 
+    }
+    .card-details { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-end; 
+    }
+    .label { 
+      font-size: 9px; 
+      color: #a3c2b8; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      margin-bottom: 2px; 
+    }
+    .val { 
+      font-size: 13px; 
+      font-weight: 600; 
+      letter-spacing: 1px; 
+      color: #fff; 
+    }
     /* Back Side */
     .card-back {
-      background: linear-gradient(135deg, #0b0d11 0%, #1e242e 100%);
+      background: linear-gradient(135deg, #05241c 0%, #005F4B 100%);
       transform: rotateY(180deg);
       padding-top: 25px;
       box-sizing: border-box;
     }
-    .magnetic-strip { width: 100%; height: 45px; background: #000; }
+    .magnetic-strip { 
+      width: 100%; 
+      height: 45px; 
+      background: #000; 
+    }
     .signature-bar {
       margin: 20px;
       background: #e0e0e0;
@@ -74,7 +121,12 @@
       font-family: 'Courier New', Courier, monospace;
       font-weight: bold;
     }
-    .back-info { padding: 0 20px; font-size: 10px; color: #7f8c8d; text-align: center; }
+    .back-info { 
+      padding: 0 20px; 
+      font-size: 10px; 
+      color: #a3c2b8; 
+      text-align: center; 
+    }
   </style>
 </head>
 <body>
@@ -85,11 +137,11 @@
     <!-- FRONT -->
     <div class="card-face card-front">
       <div class="card-header">
-        <span class="bank-name">BANCA D'ITALIA INTESA SAN PAOLO • </span>
-        <span style="font-size: 12px; opacity: 0.6;">BLACK CARD</span>
+        <span class="bank-name">INTESA SANPAOLO</span>
+        <span style="font-size: 12px; opacity: 0.8;">BLACK</span>
       </div>
       <div class="chip"></div>
-      <div class="card-number" id="cardNumber">**** **** **** ****</div>
+      <div class="card-number" id="cardNumber">4000 0000 0000 0000</div>
       <div class="card-details">
         <div>
           <div class="label">Titolare Conto</div>
@@ -109,7 +161,7 @@
         <span>CVV: <strong id="cardCVV">***</strong></span>
       </div>
       <div class="back-info">
-        Questa carta è di proprietà esclusiva del circuito bancario di Roma Eterna RP. L'uso è riservato al titolare del conto.
+        Questa carta è di proprietà di Intesa Sanpaolo.
       </div>
     </div>
   </div>
@@ -120,11 +172,19 @@
     if (dataStr) {
       try {
         const decoded = JSON.parse(atob(dataStr));
+        
         document.getElementById('cardHolder').textContent = (decoded.nome || 'N/A').toUpperCase();
         document.getElementById('cardCF').textContent = (decoded.cf || 'N/A').toUpperCase();
-        document.getElementById('cardNumber').textContent = decoded.iban || 'IT00 0000 0000 0000';
+        
+        // Garantisce che ci siano solo le 16 cifre della carta di credito (nessun IBAN o prefisso IT)
+        let num = decoded.cardNumber || '4000 1234 5678 9010';
+        num = num.replace(/IT/gi, '').trim();
+        
+        document.getElementById('cardNumber').textContent = num;
         document.getElementById('cardCVV').textContent = decoded.cvv || '123';
-      } catch(e) {}
+      } catch(e) {
+        console.error("Errore nel caricamento della carta:", e);
+      }
     }
   </script>
 </body>
